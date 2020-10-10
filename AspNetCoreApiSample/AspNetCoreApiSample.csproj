@@ -4,5 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetCoreApiSample.Service\AspNetCoreApiSample.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CustomAttributes\" />
+    <Folder Include="RequestModels\" />
+  </ItemGroup>
+
 
 </Project>
