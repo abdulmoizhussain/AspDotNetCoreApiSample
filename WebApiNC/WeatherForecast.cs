@@ -1,6 +1,6 @@
 using System;
 
-namespace AspNetCoreApiSample
+namespace WebApiNC
 {
   public class WeatherForecast
   {
