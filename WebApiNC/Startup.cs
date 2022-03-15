@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Text.Json.Serialization;
+using WebApiNC.Attributes;
 using WebApiNC.Controllers;
 using WebApiNC.Middlewares;
 
@@ -24,7 +25,7 @@ namespace WebApiNC
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddControllers();
+      services.AddControllers(x => x.Filters.Add(new ResponseFilterAttribute()));
 
       services.AddApiVersioning(x =>
       {
@@ -33,7 +34,9 @@ namespace WebApiNC
         x.ReportApiVersions = true;
       });
 
-      services.AddMvc().AddJsonOptions(options =>
+      services
+        .AddMvc()
+        .AddJsonOptions(options =>
       {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
       });

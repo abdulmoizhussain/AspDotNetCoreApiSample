@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using System;
+using WebApiNC.ResponseModels;
 
 namespace WebApiNC.Controllers
 {
@@ -58,9 +59,9 @@ namespace WebApiNC.Controllers
     }
 
     [HttpGet]
-    public void Get2()
+    public IActionResult Get2(Enum1 enum1)
     {
-      throw new Exception("asdfasdfasdf qwerqwerqwer");
+      return ApiResponse.BadRequest("asdf");
     }
 
     [HttpGet("get")]
