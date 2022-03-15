@@ -34,9 +34,7 @@ namespace WebApiNC
         x.ReportApiVersions = true;
       });
 
-      services
-        .AddMvc()
-        .AddJsonOptions(options =>
+      services.AddMvc().AddJsonOptions(options =>
       {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
       });
