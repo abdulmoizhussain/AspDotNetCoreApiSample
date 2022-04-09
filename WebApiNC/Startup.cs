@@ -44,11 +44,8 @@ namespace WebApiNC
 
       services
         .AddIdentityServer()
-        //.AddInMemoryClients(new List<Client>())
         .AddInMemoryClients(Config.Clients)
-        //.AddInMemoryIdentityResources(new List<IdentityResource>())
         .AddInMemoryIdentityResources(Config.IdentityResources)
-        //.AddInMemoryApiResources(new List<ApiResource>())
         .AddInMemoryApiResources(Config.ApiResources)
         .AddInMemoryApiScopes(Config.ApiScopes)
         .AddTestUsers(Config.Users)
@@ -110,19 +107,6 @@ namespace WebApiNC
     {
       Console.WriteLine($"evicted: {key}, {value}, Reason: {reason}, state: {state}");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void ApplicationStoppingListener(this IApplicationBuilder app)
     {

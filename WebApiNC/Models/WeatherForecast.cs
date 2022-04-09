@@ -1,6 +1,6 @@
 using System;
 
-namespace WebApiNC
+namespace WebApiNC.Models
 {
   public class WeatherForecast
   {
