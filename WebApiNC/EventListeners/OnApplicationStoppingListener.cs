@@ -5,7 +5,7 @@ namespace WebApiNC.EventListeners
 {
   public static class OnApplicationStoppingListener
   {
-    public static void ApplicationStoppingListener(this IApplicationBuilder app)
+    public static void ApplicationStoppingListener(this IApplicationBuilder _)
     {
       Console.WriteLine("Application stopping.");
     }

@@ -20,5 +20,15 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="JwtCertificate\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="JwtCertificate\rsa_cert.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 
 </Project>

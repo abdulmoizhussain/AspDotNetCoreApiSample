@@ -48,7 +48,8 @@ namespace WebApiNC
         .AddInMemoryApiResources(Config.ApiResources)
         .AddInMemoryApiScopes(Config.ApiScopes)
         .AddTestUsers(Config.Users)
-        .AddDeveloperSigningCredential();
+        .AddSigningCredential(GetCertificate());
+
 
       services.AddMemoryCache();
     }
@@ -72,6 +73,11 @@ namespace WebApiNC
 
       lifetime.ApplicationStarted.Register(app.ApplicationStartedListener);
       lifetime.ApplicationStopping.Register(app.ApplicationStoppingListener);
+    }
+
+    private System.Security.Cryptography.X509Certificates.X509Certificate2 GetCertificate()
+    {
+      return new System.Security.Cryptography.X509Certificates.X509Certificate2("./JwtCertificate/rsa_cert.pfx", Configuration["JwtCertificate:Password"]);
     }
   }
 }
